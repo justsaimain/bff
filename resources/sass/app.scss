@@ -1,0 +1,32 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Icons
+@import '~bootstrap-icons/font/bootstrap-icons';
+
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.btn{
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.btn-primary{
+    background-color: #4c2fe3;
+    color: #fff;
+}
+
+.btn-primary:hover ,
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: #4c2fe3 !important;
+    box-shadow: none !important;
+    outline: none !important;
+
+}
