@@ -5,31 +5,31 @@
                 <div class="nav__menu py-3" id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="#home" class="nav__link active-link">
+                            <router-link to="/" class="nav__link" :class="{'active-link' : this.$route.path === '/' }">
                                 <i class="bx bx-home-alt nav__icon"></i>
                                 <span class="nav__name">Home</span>
-                            </a>
+                            </router-link>
                         </li>
 
                         <li class="nav__item">
-                            <a href="#about" class="nav__link">
+                            <router-link to="/tournament" class="nav__link"  :class="{'active-link' : this.$route.path === '/tournament' }">
                                 <i class="bx bx-layer nav__icon"></i>
                                 <span class="nav__name">Tournament</span>
-                            </a>
+                            </router-link>
                         </li>
 
                         <li class="nav__item">
-                            <a href="#skills" class="nav__link">
+                            <router-link to="/leaderboard" class="nav__link" :class="{'active-link' : this.$route.path === '/leaderboard' }">
                                 <i class="bx bx-line-chart nav__icon"></i>
                                 <span class="nav__name">Leaderboard</span>
-                            </a>
+                            </router-link>
                         </li>
 
                         <li class="nav__item">
-                            <a href="#portfolio" class="nav__link">
+                            <router-link to="/setting" class="nav__link"  :class="{'active-link' : this.$route.path === '/setting' }">
                                 <i class="bx bx-cog nav__icon"></i>
                                 <span class="nav__name">Setting</span>
-                            </a>
+                            </router-link>
                         </li>
                     </ul>
                 </div>
