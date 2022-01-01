@@ -47,41 +47,57 @@
             <div class="row">
                 <div class="col">
                     <ul class="list-group list-group-flush">
-                        <li
-                            class="list-group-item"
-                            style="color: #838383; cursor: pointer"
+                        <a
+                            href="#"
+                            class="list-group-item ist-group-item-action d-flex justify-content-between align-items-center"
                         >
-                            <TextBoxCheckIcon></TextBoxCheckIcon>
-                            Terms & Conditions
-                        </li>
-                        <li
-                            class="list-group-item"
-                            style="color: #838383; cursor: pointer"
+                            <div class="d-flex align-items-center">
+                                <TextBoxCheckIcon
+                                    class="me-2"
+                                ></TextBoxCheckIcon>
+                                Terms & Conditions
+                            </div>
+                            <ChevronRightIcon></ChevronRightIcon>
+                        </a>
+                        <a
+                            href="#"
+                            class="list-group-item ist-group-item-action d-flex justify-content-between align-items-center"
                         >
-                            <HelpIcon></HelpIcon>
-                            Frequently Asked Questions
-                        </li>
-                        <li
-                            class="list-group-item"
-                            style="color: #838383; cursor: pointer"
+                            <div class="d-flex align-items-center">
+                                <HelpIcon class="me-2"></HelpIcon>
+                                Frequently Asked Questions
+                            </div>
+                            <ChevronRightIcon></ChevronRightIcon>
+                        </a>
+                        <a
+                            href="#"
+                            class="list-group-item ist-group-item-action d-flex justify-content-between align-items-center"
                         >
-                            <StarFaceIcon></StarFaceIcon>
-                            Give Us Feedbacks
-                        </li>
-                        <li
-                            class="list-group-item"
-                            style="color: #838383; cursor: pointer"
+                            <div class="d-flex align-items-center">
+                                <StarFaceIcon class="me-2"></StarFaceIcon>
+                                Give Us Feedbacks
+                            </div>
+                            <ChevronRightIcon></ChevronRightIcon>
+                        </a>
+                        <a
+                            href="#"
+                            class="list-group-item ist-group-item-action d-flex justify-content-between align-items-center"
                         >
-                            <PhoneInTalkIcon></PhoneInTalkIcon>
-                            Contact Us
-                        </li>
-                        <li
-                            class="list-group-item"
-                            style="color: #838383; cursor: pointer"
+                            <div class="d-flex align-items-center">
+                                <PhoneInTalkIcon class="me-2"></PhoneInTalkIcon>
+                                Contact Us
+                            </div>
+                            <ChevronRightIcon></ChevronRightIcon>
+                        </a>
+                        <a
+                            href="#"
+                            class="list-group-item ist-group-item-action d-flex justify-content-between align-items-center"
                         >
-                            <LogoutIcon></LogoutIcon>
-                            Logout
-                        </li>
+                            <div class="d-flex align-items-center">
+                                <LogoutIcon class="me-2"></LogoutIcon>
+                                Logout
+                            </div>
+                        </a>
                     </ul>
                 </div>
             </div>
@@ -96,6 +112,7 @@ import HelpIcon from "vue-material-design-icons/Help.vue";
 import StarFaceIcon from "vue-material-design-icons/StarFace.vue";
 import PhoneInTalkIcon from "vue-material-design-icons/PhoneInTalk.vue";
 import LogoutIcon from "vue-material-design-icons/Logout.vue";
+import ChevronRightIcon from "vue-material-design-icons/ChevronRight.vue";
 
 export default {
     components: {
@@ -105,6 +122,7 @@ export default {
         StarFaceIcon,
         PhoneInTalkIcon,
         LogoutIcon,
+        ChevronRightIcon,
     },
 };
 </script>
