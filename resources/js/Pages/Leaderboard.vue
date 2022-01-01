@@ -1,6 +1,6 @@
 <template>
     <div>
-        <top-nav></top-nav>
+        <top-nav class="d-md-none"></top-nav>
         <h3 class="text-dark">Leaderboard Page</h3>
     </div>
 </template>

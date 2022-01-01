@@ -1,6 +1,6 @@
 <template>
     <div>
-        <top-nav></top-nav>
+        <top-nav class="d-md-none"></top-nav>
         <div class="content" style="margin-top: -1px">
             <div class="content-bg pt-3">
                 <div class="header-div mx-4 text-center">
@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <div class="body-div px-3" style="margin-top: 80px">
+            <div class="body-div px-3" style="margin-top: 130px">
                 <p class="text-dark">Recent Matches</p>
                 <div class="recent-matches-container">
                     <div class="card border-0 shadow-sm recent-matches">
@@ -227,12 +227,10 @@ export default {
 }
 
 .content-bg {
-    height: 200px;
+    height: 150px;
     background: var(--first-color);
-    border-radius: 0 0 1rem 1rem;
+    border-radius: 0 0 2rem 2rem;
 }
-
-
 
 .header-div p {
     font-weight: 400;

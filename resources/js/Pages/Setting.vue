@@ -1,13 +1,118 @@
 <template>
     <div>
-        <top-nav></top-nav>
-        <h3 class="text-dark">Setting Page</h3>
+        <top-nav class="d-md-none"></top-nav>
+        <div class="content-bg pt-3" style="margin-top: -1px">
+            <div class="d-flex justify-content-center mb-2">
+                <div
+                    class="bg-white rounded-circle"
+                    style="padding: 2px; width: 100px; height: 100px"
+                >
+                    <img
+                        class="img img-fluid rounded-circle p-1"
+                        style="border: 1px solid #4c2fe3"
+                        src="https://www.shareicon.net/data/512x512/2016/06/30/788946_people_512x512.png"
+                        alt=""
+                    />
+                </div>
+            </div>
+            <div class="text-center">
+                <p
+                    class="mb-0"
+                    style="
+                        font-size: 18px;
+                        font-weight: 700;
+                        letter-spacing: 1px;
+                        color: #505050;
+                    "
+                >
+                    Sai Main
+                </p>
+                <div style="color: #848484" class="mb-2">
+                    <p class="mb-0">Man Utd | 0998939399</p>
+                    <p class="mb-0">Yangon</p>
+                </div>
+                <button
+                    class="btn btn-primary px-3"
+                    style="
+                        font-size: 13px;
+                        font-weight: 700;
+                        letter-spacing: 1px;
+                    "
+                >
+                    Edit Profile
+                </button>
+            </div>
+        </div>
+        <div class="container" style="margin-top: 200px">
+            <div class="row">
+                <div class="col">
+                    <ul class="list-group list-group-flush">
+                        <li
+                            class="list-group-item"
+                            style="color: #838383; cursor: pointer"
+                        >
+                            <TextBoxCheckIcon></TextBoxCheckIcon>
+                            Terms & Conditions
+                        </li>
+                        <li
+                            class="list-group-item"
+                            style="color: #838383; cursor: pointer"
+                        >
+                            <HelpIcon></HelpIcon>
+                            Frequently Asked Questions
+                        </li>
+                        <li
+                            class="list-group-item"
+                            style="color: #838383; cursor: pointer"
+                        >
+                            <StarFaceIcon></StarFaceIcon>
+                            Give Us Feedbacks
+                        </li>
+                        <li
+                            class="list-group-item"
+                            style="color: #838383; cursor: pointer"
+                        >
+                            <PhoneInTalkIcon></PhoneInTalkIcon>
+                            Contact Us
+                        </li>
+                        <li
+                            class="list-group-item"
+                            style="color: #838383; cursor: pointer"
+                        >
+                            <LogoutIcon></LogoutIcon>
+                            Logout
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
 import TopNav from "../Components/TopNav.vue";
+import TextBoxCheckIcon from "vue-material-design-icons/TextBoxCheck.vue";
+import HelpIcon from "vue-material-design-icons/Help.vue";
+import StarFaceIcon from "vue-material-design-icons/StarFace.vue";
+import PhoneInTalkIcon from "vue-material-design-icons/PhoneInTalk.vue";
+import LogoutIcon from "vue-material-design-icons/Logout.vue";
+
 export default {
-    components: { TopNav },
+    components: {
+        TopNav,
+        TextBoxCheckIcon,
+        HelpIcon,
+        StarFaceIcon,
+        PhoneInTalkIcon,
+        LogoutIcon,
+    },
 };
 </script>
+
+<style scoped>
+.content-bg {
+    height: 70px;
+    background: var(--first-color);
+    border-radius: 0 0 2rem 2rem;
+}
+</style>

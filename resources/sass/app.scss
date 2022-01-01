@@ -11,6 +11,16 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+.primary-bg{
+    background: #4c2fe3;
+    color: #fff;
+}
+
+.primary-color{
+    color: #4c2fe3;
+    background: #fff;
+}
+
 .btn{
     outline: none !important;
     border: none !important;

@@ -147,6 +147,13 @@ export default {
     --z-fixed: 100;
 }
 
+/* custom css */
+
+.page-title {
+    color: #757575;
+    font-size: 15px;
+}
+
 @media screen and (min-width: 968px) {
     :root {
         --h1-font-size: 2.25rem;

@@ -11251,10 +11251,10 @@ textarea.form-control-lg {
 .list-group-item {
   position: relative;
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 15px 1rem;
   color: #212529;
   text-decoration: none;
-  background-color: #fff;
+  background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.125);
 }
 .list-group-item:first-child {
@@ -11268,7 +11268,7 @@ textarea.form-control-lg {
 .list-group-item.disabled, .list-group-item:disabled {
   color: #6c757d;
   pointer-events: none;
-  background-color: #fff;
+  background-color: transparent;
 }
 .list-group-item.active {
   z-index: 2;
@@ -17445,6 +17445,16 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.primary-bg {
+  background: #4c2fe3;
+  color: #fff;
+}
+
+.primary-color {
+  color: #4c2fe3;
+  background: #fff;
+}
+
 .btn {
   outline: none !important;
   border: none !important;
