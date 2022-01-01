@@ -28,6 +28,7 @@
     "dependencies": {
         "bootstrap-icons": "^1.7.2",
         "vue-horizontal": "^0.8.12",
-        "vue-material-design-icons": "^5.0.0"
+        "vue-material-design-icons": "^5.0.0",
+        "vue-progressbar": "^0.7.5"
     }
 }
