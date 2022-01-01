@@ -5,29 +5,65 @@
                 <div class="nav__menu py-3" id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <router-link to="/" class="nav__link" :class="{'active-link' : this.$route.path === '/' }">
-                                <i class="bx bx-home-alt nav__icon"></i>
+                            <router-link
+                                to="/"
+                                class="nav__link"
+                                :class="{
+                                    'active-link': this.$route.path === '/',
+                                }"
+                            >
+                                <span class="nav__icon"
+                                    ><HomeIcon></HomeIcon
+                                ></span>
                                 <span class="nav__name">Home</span>
                             </router-link>
                         </li>
 
                         <li class="nav__item">
-                            <router-link to="/tournament" class="nav__link"  :class="{'active-link' : this.$route.path === '/tournament' }">
-                                <i class="bx bx-layer nav__icon"></i>
+                            <router-link
+                                to="/tournament"
+                                class="nav__link"
+                                :class="{
+                                    'active-link':
+                                        this.$route.path === '/tournament',
+                                }"
+                            >
+                                <span class="nav__icon"
+                                    ><TrophyIcon></TrophyIcon
+                                ></span>
                                 <span class="nav__name">Tournament</span>
                             </router-link>
                         </li>
 
                         <li class="nav__item">
-                            <router-link to="/leaderboard" class="nav__link" :class="{'active-link' : this.$route.path === '/leaderboard' }">
-                                <i class="bx bx-line-chart nav__icon"></i>
+                            <router-link
+                                to="/leaderboard"
+                                class="nav__link"
+                                :class="{
+                                    'active-link':
+                                        this.$route.path === '/leaderboard',
+                                }"
+                            >
+                                <span class="nav__icon"
+                                    ><PodiumGoldIcon></PodiumGoldIcon
+                                ></span>
                                 <span class="nav__name">Leaderboard</span>
                             </router-link>
                         </li>
 
                         <li class="nav__item">
-                            <router-link to="/setting" class="nav__link"  :class="{'active-link' : this.$route.path === '/setting' }">
-                                <i class="bx bx-cog nav__icon"></i>
+                            <router-link
+                                to="/setting"
+                                class="nav__link"
+                                :class="{
+                                    'active-link':
+                                        this.$route.path === '/setting',
+                                }"
+                            >
+                                <span class="nav__icon"
+                                    ><MenuIcon></MenuIcon
+                                ></span>
+
                                 <span class="nav__name">Setting</span>
                             </router-link>
                         </li>
@@ -46,9 +82,19 @@
 </template>
 
 <script>
+import HomeIcon from "vue-material-design-icons/Home.vue";
+import MenuIcon from "vue-material-design-icons/Menu.vue";
+import TrophyIcon from "vue-material-design-icons/Trophy.vue";
+import PodiumGoldIcon from "vue-material-design-icons/PodiumGold.vue";
+
 export default {
     name: "app",
-    components: {},
+    components: {
+        HomeIcon,
+        MenuIcon,
+        TrophyIcon,
+        PodiumGoldIcon,
+    },
 };
 </script>
 <style>
@@ -204,6 +250,11 @@ img {
 
 .nav__icon {
     font-size: 1.5rem;
+    color: #c4c4c4;
+}
+
+.active-link .nav__icon {
+    color: var(--first-color);
 }
 
 /*Active link*/

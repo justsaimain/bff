@@ -4,7 +4,7 @@ require('./bootstrap')
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import 'boxicons'
+
 
 import router from './Router/index'
 import store from './Store/index'
