@@ -47,7 +47,7 @@
 
                 <div v-else>
                     <p
-                        class="alert alert-danger border-0 rounded-3 font-monospace"
+                        class="border-0 rounded-3 font-monospace text-danger"
                     >
                         Sorry, We can not get your phone number. Please go back
                         and register again.
