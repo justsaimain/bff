@@ -41,17 +41,6 @@
                         />
                         <label for="password">Password</label>
                     </div>
-                    <div class="form-floating">
-                        <input
-                            type="password"
-                            class="form-control"
-                            id="password_confirmation"
-                            placeholder="Confirm Password"
-                        />
-                        <label for="password_confirmation"
-                            >Confirm Password</label
-                        >
-                    </div>
                     <div class="mt-3 text-center">
                         <button
                             type="submit"
@@ -107,7 +96,24 @@ export default {
     },
     methods: {
         register() {
-            this.$router.push("/confirm");
+            let frmData = new FormData();
+            frmData.append("name", this.name);
+            frmData.append("phone", this.phone);
+            frmData.append("password", this.password);
+            axios
+                .post("/register", frmData)
+                .then((res) => {
+                    this.$store.commit(
+                        "STORE_REQUEST_ID",
+                        res.data.data.sms.request_id
+                    );
+                    this.$router.push({
+                        path: "/confirm",
+                    });
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
         },
     },
 };

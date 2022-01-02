@@ -28,10 +28,7 @@
                                 <label for="otp">Enter Code</label>
                             </div>
                             <div class="mt-3 text-center">
-                                <p
-                                    class="text-muted"
-                                    style="font-size:13px;"
-                                >
+                                <p class="text-muted" style="font-size: 13px">
                                     Code expire in {{ countDown }} s
                                 </p>
                                 <button
@@ -46,9 +43,7 @@
                 </div>
 
                 <div v-else>
-                    <p
-                        class="border-0 rounded-3 font-monospace text-danger"
-                    >
+                    <p class="border-0 rounded-3 font-monospace text-danger">
                         Sorry, We can not get your phone number. Please go back
                         and register again.
                     </p>
@@ -88,9 +83,26 @@ export default {
                 }, 1000);
             }
         },
-        verify(){
-
-        }
+        verify() {
+            const request_id = this.$store.getters["user"].request_id;
+            let frmData = new FormData();
+            frmData.append("phone", this.$store.getters["user"].phone);
+            frmData.append("request_id", parseInt(request_id));
+            frmData.append("code", parseInt(this.otp));
+            axios
+                .post("/verify", frmData)
+                .then((res) => {
+                    if (res.data.success === true) {
+                        alert("Account Verified");
+                        window.location.href = "/";
+                    }else{
+                        alert(res.data.message);
+                    }
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        },
     },
 };
 </script>

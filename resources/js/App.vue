@@ -57,7 +57,9 @@
                                 class="nav__link"
                                 :class="{
                                     'active-link':
-                                        this.$route.path === '/setting' || this.$route.path === '/login' || this.$route.path === '/register',
+                                        this.$route.path === '/setting' ||
+                                        this.$route.path === '/login' ||
+                                        this.$route.path === '/register',
                                 }"
                             >
                                 <span class="nav__icon"
@@ -234,9 +236,7 @@ img {
         height: 0px !important;
     }
 
-    .section {
-        /* padding: 1rem 1rem 3.5rem 1rem; */
-    }
+
 
     .nav__menu {
         position: fixed;
