@@ -57,7 +57,7 @@
                                 class="nav__link"
                                 :class="{
                                     'active-link':
-                                        this.$route.path === '/setting',
+                                        this.$route.path === '/setting' || this.$route.path === '/login' || this.$route.path === '/register',
                                 }"
                             >
                                 <span class="nav__icon"

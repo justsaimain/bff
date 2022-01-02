@@ -1,6 +1,6 @@
 <template>
     <div>
-        <top-nav class="d-md-none"></top-nav>
+        <top-nav></top-nav>
         <h3 class="text-dark">Tournament Page</h3>
     </div>
 </template>

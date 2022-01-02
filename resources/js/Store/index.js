@@ -1,13 +1,43 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue from "vue";
+import Vuex from "vuex";
 
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
-    state: {},
-    mutations: {},
-    actions: {},
-    getters: {},
+    state: {
+        temp_user: {
+            name: "",
+            phone: "",
+            password: "",
+        },
+    },
+    mutations: {
+        STORE_TEMP_USER_NAME( state, name ) {
+            state.temp_user.name = name;
+        },
+        STORE_TEMP_USER_PHONE( state, phone ) {
+            state.temp_user.phone = phone;
+        },
+        STORE_TEMP_USER_PASSWORD( state, password ) {
+            state.temp_user.password = password;
+        },
+    },
+    actions: {
+        storeName({ commit }, newValue) {
+            commit("STORE_TEMP_USER_NAME", newValue);
+        },
+        storePhone({ commit }, newValue) {
+            commit("STORE_TEMP_USER_PHONE", newValue);
+        },
+        storePassword({ commit }, newValue) {
+            commit("STORE_TEMP_USER_PASSWORD", newValue);
+        },
+    },
+    getters: {
+        user: (state) => {
+            return state.temp_user;
+        },
+    },
 });
 
 export default store;

@@ -29,6 +29,11 @@ const routes = [
         name: "register",
         component: () => import("../Pages/Auths/Register.vue"),
     },
+    {
+        path: "/confirm",
+        name: "confirm",
+        component: () => import("../Pages/Auths/Confirm.vue"),
+    },
 ];
 
 export default routes;

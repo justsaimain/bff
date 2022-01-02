@@ -16,31 +16,56 @@
                 </div>
             </div>
             <div class="text-center">
-                <p
-                    class="mb-0"
-                    style="
-                        font-size: 18px;
-                        font-weight: 700;
-                        letter-spacing: 1px;
-                        color: #505050;
-                    "
-                >
-                    Sai Main
-                </p>
-                <div style="color: #848484" class="mb-2">
-                    <p class="mb-0">Man Utd | 0998939399</p>
-                    <p class="mb-0">Yangon</p>
+                <template>
+                    <div class="mt-3">
+                        <router-link
+                            to="/login"
+                            class="btn btn-primary px-3"
+                            style="
+                                font-size: 13px;
+                                font-weight: 700;
+                                letter-spacing: 1px;
+                            "
+                        >
+                            Login to Account
+                        </router-link>
+                        <div class="mt-3">
+                            <router-link
+                                to="register"
+                                class=""
+                                style="text-decoration: none; color: #848484"
+                                >Create an account</router-link
+                            >
+                        </div>
+                    </div>
+                </template>
+                <div v-show="false">
+                    <p
+                        class="mb-0"
+                        style="
+                            font-size: 18px;
+                            font-weight: 700;
+                            letter-spacing: 1px;
+                            color: #505050;
+                        "
+                    >
+                        Sai Main
+                    </p>
+                    <div style="color: #848484" class="mb-2">
+                        <p class="mb-0">Man Utd | 0998939399</p>
+                        <p class="mb-0">Yangon</p>
+                    </div>
+                    <button
+                        class="btn btn-primary px-3"
+                        style="
+                            font-size: 13px;
+                            font-weight: 700;
+                            letter-spacing: 1px;
+                        "
+                    >
+                        Edit Profile
+                    </button>
                 </div>
-                <button
-                    class="btn btn-primary px-3"
-                    style="
-                        font-size: 13px;
-                        font-weight: 700;
-                        letter-spacing: 1px;
-                    "
-                >
-                    Edit Profile
-                </button>
             </div>
         </div>
         <div class="container" style="margin-top: 200px">
