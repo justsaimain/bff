@@ -3,16 +3,64 @@
         <top-nav class="d-md-none"></top-nav>
         <div class="content-bg pt-3" style="margin-top: -1px">
             <div class="text-center">
-                <h3 class="page-title">Confirm</h3>
+                <h3 class="page-title">Verify Phone</h3>
             </div>
 
-            <div class="mt-3 text-center">
-                <router-link
-                    to="/login"
-                    class=""
-                    style="text-decoration: none; color: #848484"
-                    >Login existing account</router-link
-                >
+            <div
+                class="card card-body mx-3 border-0 shadow-sm"
+                style="margin-top: 60px; border-radius: 10px"
+            >
+                <div v-if="this.$store.getters['user'].phone != ''">
+                    <form @submit.prevent="verify()">
+                        <div>
+                            <p>
+                                OTP Code has been sent to
+                                {{ this.$store.getters["user"].phone }}
+                            </p>
+                            <div class="form-floating mb-3">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="otp"
+                                    v-model="otp"
+                                    placeholder="1234"
+                                />
+                                <label for="otp">Enter Code</label>
+                            </div>
+                            <div class="mt-3 text-center">
+                                <p
+                                    class="text-muted"
+                                    style="font-size:13px;"
+                                >
+                                    Code expire in {{ countDown }} s
+                                </p>
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary px-3 login-btn"
+                                >
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div v-else>
+                    <p
+                        class="alert alert-danger border-0 rounded-3 font-monospace"
+                    >
+                        Sorry, We can not get your phone number. Please go back
+                        and register again.
+                    </p>
+                    <div class="mt-3 text-center">
+                        <router-link
+                            to="/register"
+                            class="btn btn-primary px-3 login-btn"
+                        >
+                            Go Back
+                        </router-link>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -22,10 +70,28 @@
 import TopNav from "../../Components/TopNav.vue";
 export default {
     components: { TopNav },
-    mounted(){
-        console.log(this.$store.getters['user']);
+    data() {
+        return {
+            otp: "",
+            countDown: 60,
+        };
     },
-    methods: {},
+    created() {
+        this.countDownTimer();
+    },
+    methods: {
+        countDownTimer() {
+            if (this.countDown > 0) {
+                setTimeout(() => {
+                    this.countDown -= 1;
+                    this.countDownTimer();
+                }, 1000);
+            }
+        },
+        verify(){
+
+        }
+    },
 };
 </script>
 

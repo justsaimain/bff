@@ -26,6 +26,7 @@
                             type="text"
                             class="form-control"
                             id="phone"
+                            v-model="phone"
                             placeholder="0997981234"
                         />
                         <label for="phone">Phone Number</label>
@@ -35,6 +36,7 @@
                             type="password"
                             class="form-control"
                             id="password"
+                            v-model="password"
                             placeholder="Password"
                         />
                         <label for="password">Password</label>
