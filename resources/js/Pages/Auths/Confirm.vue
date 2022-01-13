@@ -93,9 +93,13 @@ export default {
                 .post("/verify", frmData)
                 .then((res) => {
                     if (res.data.success === true) {
-                        alert("Account Verified");
+                        localStorage.setItem(
+                            "auth",
+                            JSON.stringify(res.data.data)
+                        );
+
                         window.location.href = "/";
-                    }else{
+                    } else {
                         alert(res.data.message);
                     }
                 })

@@ -101,6 +101,13 @@ export default {
     mounted() {
         //  [App.vue specific] When App.vue is finish loading finish the progress bar
         this.$Progress.finish();
+
+        // check auth
+        const auth = localStorage.getItem("auth");
+
+        if (auth !== "" || auth !== null || auth !== "null") {
+            this.$store.dispatch("storeAuth", auth);
+        }
     },
     created() {
         //  [App.vue specific] When App.vue is first loaded start the progress bar
@@ -235,8 +242,6 @@ img {
         background: transparent !important;
         height: 0px !important;
     }
-
-
 
     .nav__menu {
         position: fixed;

@@ -11,6 +11,7 @@ const store = new Vuex.Store({
             password: "",
             request_id: "",
         },
+        auth: {},
     },
     mutations: {
         STORE_TEMP_USER_NAME(state, name) {
@@ -22,9 +23,12 @@ const store = new Vuex.Store({
         STORE_TEMP_USER_PASSWORD(state, password) {
             state.temp_user.password = password;
         },
-        STORE_REQUEST_ID(state, request_id){
+        STORE_REQUEST_ID(state, request_id) {
             state.temp_user.request_id = request_id;
-        }
+        },
+        STORE_AUTH_DATA(state, auth) {
+            state.auth = auth;
+        },
     },
     actions: {
         storeName({ commit }, newValue) {
@@ -35,11 +39,17 @@ const store = new Vuex.Store({
         },
         storePassword({ commit }, newValue) {
             commit("STORE_TEMP_USER_PASSWORD", newValue);
-        }
+        },
+        storeAuth({ commit }, newValue) {
+            commit("STORE_AUTH_DATA", newValue);
+        },
     },
     getters: {
         user: (state) => {
             return state.temp_user;
+        },
+        auth: (state) => {
+            return state.auth;
         },
     },
 });

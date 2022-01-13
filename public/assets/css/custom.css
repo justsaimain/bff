@@ -1,0 +1,10 @@
+@font-face {
+    font-family: Premier-Sans;
+    src: url('../fonts/PremierSans.ttf');
+}
+
+.player_name{
+    font-family: 'Premier-Sans';
+    letter-spacing: 5px;
+    font-size: 80px;
+}

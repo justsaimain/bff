@@ -16,7 +16,34 @@
                 </div>
             </div>
             <div class="text-center">
-                <template>
+                <template v-if="isLoggedIn">
+                    <p
+                        class="mb-0"
+                        style="
+                            font-size: 18px;
+                            font-weight: 700;
+                            letter-spacing: 1px;
+                            color: #505050;
+                        "
+                    >
+                        {{ this.user.name }}
+                    </p>
+                    <div style="color: #848484" class="mb-2">
+                        <p class="mb-0">Man Utd | {{ this.user.phone }}</p>
+                        <p class="mb-0">Yangon</p>
+                    </div>
+                    <button
+                        class="btn btn-primary px-3"
+                        style="
+                            font-size: 13px;
+                            font-weight: 700;
+                            letter-spacing: 1px;
+                        "
+                    >
+                        Edit Profile
+                    </button>
+                </template>
+                <template v-else>
                     <div class="mt-3">
                         <router-link
                             to="/login"
@@ -39,33 +66,6 @@
                         </div>
                     </div>
                 </template>
-                <div v-show="false">
-                    <p
-                        class="mb-0"
-                        style="
-                            font-size: 18px;
-                            font-weight: 700;
-                            letter-spacing: 1px;
-                            color: #505050;
-                        "
-                    >
-                        Sai Main
-                    </p>
-                    <div style="color: #848484" class="mb-2">
-                        <p class="mb-0">Man Utd | 0998939399</p>
-                        <p class="mb-0">Yangon</p>
-                    </div>
-                    <button
-                        class="btn btn-primary px-3"
-                        style="
-                            font-size: 13px;
-                            font-weight: 700;
-                            letter-spacing: 1px;
-                        "
-                    >
-                        Edit Profile
-                    </button>
-                </div>
             </div>
         </div>
         <div class="container" style="margin-top: 200px">
@@ -140,6 +140,12 @@ import LogoutIcon from "vue-material-design-icons/Logout.vue";
 import ChevronRightIcon from "vue-material-design-icons/ChevronRight.vue";
 
 export default {
+    data() {
+        return {
+            isLoggedIn: false,
+            user: null,
+        };
+    },
     components: {
         TopNav,
         TextBoxCheckIcon,
@@ -148,6 +154,18 @@ export default {
         PhoneInTalkIcon,
         LogoutIcon,
         ChevronRightIcon,
+    },
+    mounted() {
+        const auth = this.$store.getters["auth"];
+        if (auth) {
+            const token = JSON.parse(auth).token;
+            const user = JSON.parse(auth).user;
+
+            if (token) {
+                this.isLoggedIn = true;
+                this.user = user;
+            }
+        }
     },
 };
 </script>
