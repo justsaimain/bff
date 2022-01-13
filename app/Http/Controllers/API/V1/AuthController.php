@@ -100,12 +100,13 @@ class AuthController extends Controller
                 $user = User::where('phone', $phone)->first();
                 $user->phone_confirmed_at = Carbon::now();
                 $user->update();
-
+                $token = $user->createToken('User Token')->accessToken;
                 return response()->json([
                     'success' => true,
                     'message' => 'Account has been verified.',
                     'data' => [
                         'user' => $user,
+                        'token' => $token
                     ]
                 ]);
             } else {
